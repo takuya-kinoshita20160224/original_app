@@ -21,8 +21,8 @@
 | ------------- | ---------- | ------------------------------ |
 | name          | string     | null: false                    |
 | text          | text       |                                |
-| buy_date      | integer    | null: false                    |
-| limit_date    | integer    | null: false                    |
+| buy_date      | date       | null: false                    |
+| limit_date    | date       | null: false                    |
 | user          | references | null: false, foreign_key: true |
 
 ### Association
