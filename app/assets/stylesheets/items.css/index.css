@@ -1,0 +1,161 @@
+
+/* ヘッダーここから */
+header {
+}
+.main-header {
+  background-color: aqua;
+  display: flex;
+  justify-content: space-between;
+  height: 25vh;
+}
+.left-header {
+  padding: 20px;
+  width: 50%;
+}
+.app-title {
+  font-size:25px;
+}
+.header-form {
+  padding-top: 20px;
+  width: 100%;
+}
+.form-text {
+  width: 60%;
+  height: 30px;
+}
+.right-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 30%;
+  padding-top: 50px;
+}
+.user-name {
+  font-size:20px;
+  padding: 5px;
+  border-radius: 15px;
+}
+.item-tuika {
+  background-color: white;
+  font-size:20px;
+  border:1px solid black;
+  padding: 5px;
+  border-radius: 15px;
+  box-shadow: 5px 5px black;
+}
+.item-tuika:active {
+  position: relative;
+  top:5px;
+  left:5px;
+  box-shadow: none;
+}
+.item-tuika a {
+  text-decoration: none;
+  color: black;
+}
+.logout {
+  background-color: white;
+  color: black;
+  font-size:20px;
+  text-decoration: none;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 15px; 
+  box-shadow: 5px 5px black;
+}
+.logout:active {
+  position: relative;
+  top:5px;
+  left:5px;
+  box-shadow: none;
+}
+
+/* ヘッダーここまで */
+
+/* メインここから */
+main {
+  background-color: blueviolet;
+  height: 75vh;
+}
+.title-bar {
+  text-align: center;
+  display: flex;
+  height: 75px;
+  border: 1px solid black;
+}
+.items-title {
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+}
+.name-title {
+  padding-top: 10px;
+  
+}
+.buy-title {
+  margin-top: 10px;
+}
+.limit-title {
+  padding-top: 25px;
+  width: 20%;
+  border-left: 1px solid black;
+}
+.status-title {
+  padding-top: 25px;
+  width:20%;
+  border-left:1px solid black;
+}
+.text-title {
+  padding: 25px 0 0 0;
+  border-left: 1px solid black;
+  width: 40%;
+}
+/* メインヘッダーここまで */
+
+/* メインボディーここから */
+.main-contents {
+  background-color: blue;
+}
+.items-lists {
+  text-align: center;
+  display: flex;
+  height: 100px;
+  border: 1px solid black;
+}
+.item-list {
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+}
+.item-name {
+  padding-top: 10px;
+  font-size: 30px;
+}
+.item-name a {
+  color: black;
+  text-decoration: none;
+}
+.buy-date {
+  margin-top: 10px;
+}
+.text {
+  align-items: center;
+  padding: 25px 0 0 0;
+  border-left: 1px solid black;
+  width: 40%;
+}
+.limit-date {
+  padding-top: 25px;
+  width: 20%;
+  border-left: 1px solid black;
+}
+.status {
+  padding-top: 25px;
+  width:20%;
+  border-left:1px solid black;
+}
+/* メインボディーここまで */
+  footer {
+    background-color: darkgreen;
+    height: 10vh;
+  }

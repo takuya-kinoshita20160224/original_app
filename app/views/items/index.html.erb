@@ -1,0 +1,50 @@
+<header>
+  <div class="main-header">
+    <div class="left-header">
+      <h1 class="app-title">賞味期限管理アプリ</h1>
+      <form class="header-form">
+        <input class="form-text" type="text" placeholder="商品名を入力">
+        <input class="send" type="submit" value="検索">
+      </form>
+    </div>
+    <div class="right-header">
+      <div class="user-name">木下</div>
+      <div class="item-tuika">
+        <%= link_to "商品を追加する", new_item_path %>
+      </div>
+      <a href="#" class="logout">ログアウト</a>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="title-bar">
+    <div class="items-title">
+      <div>
+        <p class="name-title">商品名</p>
+        <p class="buy-title">購入日</p>
+      </div>
+      <p class="text-title">ひと言メモ</p>
+    </div>
+    <div class="limit-title">期限まであと</div>
+    <div class="status-title">状態</div>
+  </div>
+  <%# ここから一覧表示部分 %>
+  <div class="main-contents">
+    <% @items.each do |item| %>
+      <div class="items-lists">
+        <div class="item-list">
+          <div>
+            <P class="item-name"><%= link_to item.name, root_path %></p>
+            <p class="buy-date"><%= "購入日:#{item.buy_date}" %></p>
+          </div>
+          <p class="text"><%= item.text %></p>
+        </div>
+        <div class="limit-date"><%= "#{(item.limit_date - Date.today).to_i}日" %></div>
+        <div class="status">良好！</div>
+      </div>
+    <% end %>
+  </div>
+  <%# ここまで一覧表示部分 %>
+</main>
+<footer>
+</footer>
