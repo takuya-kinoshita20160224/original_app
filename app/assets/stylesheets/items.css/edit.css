@@ -1,0 +1,99 @@
+.container {
+  height: 100vh;
+}
+.form-title {
+  text-align: center;
+  font-size: 50px;
+}
+form {
+  height: 100vh;
+}
+
+.form-group {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  padding-top: 20px;
+  text-align: center;
+  align-items: center;
+}
+.form-text-wrap {
+  width: 100%;
+  height: 20%;
+}
+.form-group textarea {
+  width: 80%;
+}
+.form-group input {
+  margin-top: 10px;
+  width: 30%;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+/* 購入日と賞味期限入力欄 */
+.date-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+.date-form>select {
+  width: 75px;
+  margin-top: 5px;
+  height: 45px;
+  padding-left: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.date-form>p {
+  line-height: 60px;
+  padding: 0 5px;
+}
+.indispensable {
+  color: red;
+}
+/* 購入日と賞味期限入力欄ここまで */
+
+.form-group textarea {
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.send {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.edit input {
+  box-shadow: 5px 5px black;
+  border-radius: 10px;
+  font-size: 25px;
+  cursor: pointer;
+  border: 1px solid black;
+  background-color: white;
+}
+.delete {
+  display: inline;
+  margin-left: 20px;
+}
+.delete a {
+  margin: 0 auto;
+  box-shadow: 5px 5px black;
+  border-radius: 10px;
+  font-size: 25px;
+  cursor: pointer;
+  padding:7px;
+  border: 1px solid black;
+  text-decoration: none;
+  color: black;
+}
+.send input:active {
+  position: relative;
+  top: 5px;
+  left: 5px;
+  box-shadow: none;
+}

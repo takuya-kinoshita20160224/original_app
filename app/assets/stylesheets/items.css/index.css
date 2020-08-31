@@ -1,74 +1,67 @@
 
 /* ヘッダーここから */
 header {
+  height: 400px;
 }
 .main-header {
-  background-color: aqua;
+  height: 50px;
+  background-color: green;
+  display: flex;
+}
+.heading {
   display: flex;
   justify-content: space-between;
-  height: 25vh;
-}
-.left-header {
-  padding: 20px;
-  width: 50%;
-}
-.app-title {
-  font-size:25px;
-}
-.header-form {
-  padding-top: 20px;
-  width: 100%;
-}
-.form-text {
-  width: 60%;
-  height: 30px;
-}
-.right-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
   width: 30%;
-  padding-top: 50px;
+  line-height: 50px;
 }
-.user-name {
-  font-size:20px;
+.heading h1 {
+  margin-left: 20px;
+  font-size: 30px;
+}
+.search-form {
+  width: 40%;
+  height: 50px;
+}
+.search-input {
+  width:60%;
+  margin-left: 120px;
+}
+.search-input, .search-btn {
   padding: 5px;
-  border-radius: 15px;
-}
-.item-tuika {
-  background-color: white;
-  font-size:20px;
-  border:1px solid black;
-  padding: 5px;
-  border-radius: 15px;
-  box-shadow: 5px 5px black;
-}
-.item-tuika:active {
-  position: relative;
-  top:5px;
-  left:5px;
-  box-shadow: none;
-}
-.item-tuika a {
-  text-decoration: none;
-  color: black;
-}
-.logout {
-  background-color: white;
-  color: black;
-  font-size:20px;
-  text-decoration: none;
   border: 1px solid black;
-  padding: 5px;
-  border-radius: 15px; 
+  border-radius: 10px;
+  cursor: pointer;
+}
+.side-bar {
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+  line-height: 50px;
+}
+.header-view {
+  height: 350px;
+}
+.language {
+  
+}
+.item-tuika a, .logout a {
+  background-color:white;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
   box-shadow: 5px 5px black;
 }
-.logout:active {
-  position: relative;
-  top:5px;
-  left:5px;
+
+.item-tuika a:active, .logout a:active {
   box-shadow: none;
+  position: relative;
+  top: 5px;
+  left: 5px;
 }
+
+
 
 /* ヘッダーここまで */
 
@@ -157,5 +150,4 @@ main {
 /* メインボディーここまで */
   footer {
     background-color: darkgreen;
-    height: 10vh;
   }
