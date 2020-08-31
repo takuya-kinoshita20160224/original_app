@@ -5,7 +5,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.text :text
       t.date :buy_date,         null: false
       t.date :limit_date,       null: false
-      # t.references :user,     null: false, foreign_key: true
+      t.references :user,     null: false, foreign_key: true
       t.timestamps
     end
   end

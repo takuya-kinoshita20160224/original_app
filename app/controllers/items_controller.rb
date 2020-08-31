@@ -1,6 +1,10 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.all.order("limit_date ASC")
+    if user_signed_in?
+      @items = Item.where(user_id: current_user.id).order("limit_date ASC")
+    else
+      @items = Item.all.order("limit_date ASC")
+    end
   end
 
   def new
@@ -43,6 +47,6 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :buy_date, :limit_date, :text)
+    params.require(:item).permit(:name, :buy_date, :limit_date, :text).merge(user_id: current_user.id)
   end
 end

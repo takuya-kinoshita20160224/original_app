@@ -17,8 +17,10 @@ ActiveRecord::Schema.define(version: 2020_08_26_035237) do
     t.text "text"
     t.date "buy_date", null: false
     t.date "limit_date", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -35,4 +37,5 @@ ActiveRecord::Schema.define(version: 2020_08_26_035237) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "items", "users"
 end
