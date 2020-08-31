@@ -11,12 +11,23 @@
       <div class="language">
         <p>言語</p>
       </div>
-      <div class="item-tuika">
-        <%= link_to "商品を追加する", new_item_path %>
-      </div>
-      <div class="logout">
-        <%= link_to "ログアウト", root_path %>
-      </div>
+      <% if user_signed_in? %>
+      <%# ログイン状態 %>
+        <div class="item-tuika">
+          <%= link_to "商品を追加する", new_item_path %>
+        </div>
+        <div class="logout">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        </div>
+      <% else %>
+      <%# 未ログイン状態 %>
+        <div class="new-entry">
+          <%= link_to "新規登録", new_user_registration_path %>
+        </div>
+        <div class="login">
+          <%= link_to "ログイン", new_user_session_path %>
+        </div>
+      <% end %>
     </div>
   </div>
   <div class="header-view"></div>
