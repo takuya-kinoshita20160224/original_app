@@ -1,12 +1,16 @@
 
 /* ヘッダーここから */
 header {
-  height: 400px;
+  height: 450px;
 }
 .main-header {
+  width: 100%;
   height: 50px;
-  background-color: green;
+  background-color: rgb(41, 212, 41);
   display: flex;
+  position: fixed;
+  top: 0;
+  z-index: 10;
 }
 .heading {
   display: flex;
@@ -15,7 +19,7 @@ header {
   line-height: 50px;
 }
 .heading h1 {
-  margin-left: 20px;
+  margin-left: 10px;
   font-size: 30px;
 }
 .search-form {
@@ -23,8 +27,10 @@ header {
   height: 50px;
 }
 .search-input {
-  width:60%;
-  margin-left: 120px;
+  width:200px;
+}
+.search-btn {
+  width: 80px;
 }
 .search-input, .search-btn {
   padding: 5px;
@@ -39,10 +45,8 @@ header {
   line-height: 50px;
 }
 .header-view {
-  height: 350px;
-}
-.language {
-  
+  height: 450px;
+  opacity: 0.5;
 }
 .item-tuika a, .logout a {
   background-color:white;
@@ -75,67 +79,105 @@ header {
   top: 5px;
   left: 5px;
 }
-
+.lang-select {
+  height: 38px;
+  width: 80px;
+  margin-top: 5px;;
+  line-height: 38px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 5px 5px black;
+  background-color: white;
+  cursor: pointer;
+}
+.hidden{
+  display: none;
+}
+#lang-list {
+  border: 1px solid black;
+  width: 80px;
+  border-radius: 10px;
+  background-color: white;
+}
 /* ヘッダーここまで */
 
 /* メインここから */
 main {
-  background-color: blueviolet;
-  height: 75vh;
+  height: auto !important;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
 }
 .title-bar {
   text-align: center;
   display: flex;
-  height: 75px;
-  border: 1px solid black;
+  height: 100px;
+  border: 5px double black;
 }
 .items-title {
   display: flex;
   width: 60%;
   justify-content: space-between;
 }
+.main-title {
+  width: 50%;
+}
 .name-title {
-  padding-top: 10px;
-  
+  padding: 10px 0 0 15px;
+  font-size: 25px;
+  font-weight: bold;
 }
 .buy-title {
-  margin-top: 10px;
+  margin: 10px 0 0 10px;
+  font-size: 20px;
+  font-weight: bold;
 }
 .limit-title {
-  padding-top: 25px;
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 35px;
   width: 20%;
-  border-left: 1px solid black;
+  border-left: 5px double black;
 }
 .status-title {
-  padding-top: 25px;
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 35px;
   width:20%;
-  border-left:1px solid black;
+  border-left:5px double black;
 }
 .text-title {
   padding: 25px 0 0 0;
-  border-left: 1px solid black;
   width: 40%;
 }
 /* メインヘッダーここまで */
 
 /* メインボディーここから */
 .main-contents {
-  background-color: blue;
+  height: 100%;
 }
 .items-lists {
   text-align: center;
   display: flex;
-  height: 100px;
-  border: 1px solid black;
+  height: 120px;
+  border: 5px double black;
+  overflow: scroll;
 }
 .item-list {
   display: flex;
   width: 60%;
   justify-content: space-between;
 }
+.main-list {
+  width:50%;
+}
 .item-name {
   padding-top: 10px;
   font-size: 30px;
+  font-weight: bolder;
+
 }
 .item-name a {
   color: black;
@@ -145,22 +187,115 @@ main {
   margin-top: 10px;
 }
 .text {
-  align-items: center;
-  padding: 25px 0 0 0;
-  border-left: 1px solid black;
+  height: 100px;
   width: 40%;
+  position: relative;
+  display: inline-block;
+  margin: 5px 15px 0 15px;
+  padding: 10px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background-color: #fff;
+  border: 3px solid #555;
+  box-sizing: border-box;
+  border-radius: 10px;
 }
+.text:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -24px;
+  margin-top: -12px;
+  border: 12px solid transparent;
+  border-right: 12px solid #fff;
+  z-index: 2;
+}
+.text:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  margin-top: -14px;
+  border: 14px solid transparent;
+  border-right: 14px solid #555;
+  z-index: 1;
+}
+.text p {
+  margin: 0;
+  padding-top: 20px;
+  height: 100%;
+}
+.text-title {
+  align-items: center;
+  width: 40%;
+  position: relative;
+  display: inline-block;
+  margin: 15px;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background-color: #fff;
+  border: 3px solid #555;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.text-title:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -24px;
+  margin-top: -12px;
+  border: 12px solid transparent;
+  border-right: 12px solid #fff;
+  z-index: 2;
+}
+.text-title:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  margin-top: -14px;
+  border: 14px solid transparent;
+  border-right: 14px solid #555;
+  z-index: 1;
+}
+.text-title p {
+  margin: 0;
+  padding: 0;
+  line-height: 40px;
+}
+
 .limit-date {
-  padding-top: 25px;
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 35px;
   width: 20%;
-  border-left: 1px solid black;
+  border-left: 5px double black;
+}
+.limit-date-out {
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 35px;
+  width: 20%;
+  border-left: 5px double black;
 }
 .status {
-  padding-top: 25px;
+  margin: 0 auto;
   width:20%;
-  border-left:1px solid black;
+  border-left: 5px double black;
+}
+.status img {
+  margin-top: 30px;
+  justify-content: center;
+  width: 50px;
 }
 /* メインボディーここまで */
   footer {
     background-color: darkgreen;
+    height: 90px;
   }

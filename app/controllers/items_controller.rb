@@ -42,7 +42,7 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @items = Item.search(params[:keyword])
+    @items = Item.search(params[:keyword]).order("limit_date ASC")
   end
 
   private
