@@ -81,17 +81,17 @@
         <%# ニコちゃんマーク表示 %>
         <div class="status">
         <% if (item.limit_date - Date.today).to_i >= 3 %>
-          <img src="assets/verygood-smile.png">
+          <%= iamge_tag "/assets/verygood-smile.png" %>
         <% elsif (item.limit_date - Date.today).to_i >= 0 %>
-          <img src="assets/good-smile.png">
+          <%= image_tag "/assets/good-smile.png" %>
         <% elsif (item.limit_date - Date.today).to_i >= -1 %>
-          <img src="assets/bad-smile.png">
+          <%= image_tag "/assets/bad-smile.png" %>
         <% else %>
-          <img src="assets/verybad-smile.png">
+          <%= image_tag "/assets/verybad-smile.png" %>
         <% end %>
         </div>
         <%# ニコちゃんマーク表示 %>
-        
+
       </div>
     <% end %>
   </div>
