@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   def index
     if user_signed_in?
       @items = Item.where(user_id: current_user.id).order("limit_date ASC")
+      binding.pry
     else
       @items = Item.all.order("limit_date ASC")
     end
