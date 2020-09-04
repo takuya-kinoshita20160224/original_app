@@ -77,7 +77,6 @@
           <div class="limit-date"><%= "あと#{(item.limit_date - Date.today).to_i}日" %></div>
         <% end %>
         <%# 期限日表示 %>
-
         <%# ニコちゃんマーク表示 %>
         <div class="status">
         <% if (item.limit_date - Date.today).to_i >= 3 %>
@@ -91,7 +90,6 @@
         <% end %>
         </div>
         <%# ニコちゃんマーク表示 %>
-
       </div>
     <% end %>
   </div>
