@@ -72,7 +72,7 @@
         <% if (item.limit_date - Date.today).to_i < 0 %>
           <div class="limit-date-out"><%= "#{(Date.today - item.limit_date).to_i}日過ぎた！" %></div>
         <% elsif (Date.today - item.limit_date).to_i == 0 %>
-          <div class="limit-date"><p>今日まで！</p></div>
+          <div class="limit-date">今日まで！</div>
         <% else %>
           <div class="limit-date"><%= "あと#{(item.limit_date - Date.today).to_i}日" %></div>
         <% end %>
