@@ -68,13 +68,13 @@
       <%# 編集ボタン %>
     <div class="send edit">
       <%= f.submit "編集する" %>
+    <%# 削除ボタン %>
       <div class="delete">
         <%= link_to '削除する', item_path(@item.id), method: :delete %>
       </div>
+    <%# 削除ボタン %>
     </div>
       <%# 編集ボタン %>
 
-    <%# 削除ボタン %>
-    <%# 削除ボタン %>
   <% end %>
 </div>

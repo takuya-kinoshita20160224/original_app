@@ -11,6 +11,7 @@ function pullDownLanguage() {
   const logOut = document.querySelector("#logout a")
   const keyWord= document.getElementById("keyword")
   const searchBtn = document.querySelector("#search-btn")
+  const moveShow = document.querySelector("#move-show a")
 
   pullDownButton.addEventListener('click', function() {
     if (pullDownLists.getAttribute("style") == "display:block;") {
@@ -31,11 +32,11 @@ function pullDownLanguage() {
     logOut.innerHTML = "Log Out"
     keyWord.placeholder = "Product input"
     searchBtn.value = "Search"
+    moveShow.innerHTML = "Back"
   })
 
   const ja = document.getElementById("ja");
   ja.addEventListener("click", function() {
-    console.log("日本");
     nameTitle.innerHTML = "商品名"
     buyTitle.innerHTML = "購入日"
     memo.innerHTML = "一言メモ"
@@ -45,6 +46,7 @@ function pullDownLanguage() {
     logOut.innerHTML = "ログアウト"
     keyWord.placeholder = "商品名を入力"
     searchBtn.value = "検索"
+    moveShow.innerHTML = "一覧に戻る"
   })
 
   const zh = document.getElementById("zh");
@@ -59,6 +61,7 @@ function pullDownLanguage() {
     logOut.innerHTML = "登　　出"
     keyWord.placeholder = "产品名称输入"
     searchBtn.value = "搜索"
+    moveShow.innerHTML = "返回"
   })
 }
 window.addEventListener('load', pullDownLanguage)

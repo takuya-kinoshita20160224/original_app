@@ -1,10 +1,5 @@
 class ItemsController < ApplicationController
   def index
-    if user_signed_in?
-      @items = Item.where(user_id: current_user.id).order("limit_date ASC")
-    else
-      @items = Item.all.order("limit_date ASC")
-    end
   end
 
   def new
@@ -13,7 +8,7 @@ class ItemsController < ApplicationController
 
   def create
     if Item.create(item_params)
-      redirect_to root_path
+      redirect_to "/users/#{current_user.id}"
     else
       render :new
     end
@@ -26,7 +21,7 @@ class ItemsController < ApplicationController
   def update
     item = Item.find(params[:id])
     if item.update(item_params)
-      redirect_to root_path
+      redirect_to "/users/#{current_user.id}"
     else
       render :edit
     end
@@ -35,14 +30,14 @@ class ItemsController < ApplicationController
   def destroy
     item = Item.find(params[:id])
     if item.destroy
-      redirect_to root_path
+      redirect_to "/users/#{current_user.id}"
     else
       render :edit
     end
   end
 
   def search
-    @items = Item.search(params[:keyword]).order("limit_date ASC")
+    @items = Item.search(params[:keyword]).where(user_id: current_user.id).order("limit_date ASC")
   end
 
   private

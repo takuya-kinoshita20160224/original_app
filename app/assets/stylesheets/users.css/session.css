@@ -1,0 +1,50 @@
+bpdy {
+  height:1000px;
+}
+
+.form-wrap {
+  height: 100%;
+}
+.form-header {
+  font-size: 30px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+}
+
+
+.registration-form-group {
+  height: 150px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+}
+.input-default {
+  width: 70%;
+  height: 40px;
+  cursor: pointer;
+}
+.register-btn, .login-btn {
+  text-align: center;
+  height: 60px;
+}
+.register-red-btn, .login-red-btn {
+  height: 40px;
+  width: 100px;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 5px 5px black;
+}
+.register-red-btn:active, .login-red-btn:active {
+  box-shadow: none;
+  position: relative;
+  top: 5px;
+  left: 5px;
+}
+.input-name {
+  cursor: pointer;
+}
