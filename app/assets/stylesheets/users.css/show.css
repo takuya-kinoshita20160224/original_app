@@ -1,0 +1,303 @@
+/* ヘッダーここから */
+header {
+  height: 450px;
+}
+.main-header {
+  width: 100%;
+  height: 50px;
+  background-color: rgb(41, 212, 41);
+  display: flex;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  line-height: 50px;
+}
+.show-title {
+  margin-left: 10px;
+  font-size: 35px;
+  font-family: 'Kaushan Script', cursive;
+}
+.search-form {
+  width: 40%;
+  height: 50px;
+}
+.search-input {
+  width:200px;
+}
+.search-btn {
+  width: 80px;
+}
+.search-input, .search-btn {
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.side-bar {
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+  line-height: 50px;
+}
+.header-view {
+  height: 450px;
+  opacity: 0.5;
+}
+.item-tuika a, .logout a {
+  background-color:white;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+  box-shadow: 5px 5px black;
+}
+
+.item-tuika a:active, .logout a:active {
+  box-shadow: none;
+  position: relative;
+  top: 5px;
+  left: 5px;
+}
+
+.lang-select {
+  height: 38px;
+  width: 80px;
+  margin-top: 5px;;
+  line-height: 38px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 5px 5px black;
+  background-color: white;
+  cursor: pointer;
+}
+.hidden{
+  display: none;
+}
+#lang-list {
+  border: 1px solid black;
+  width: 80px;
+  border-radius: 10px;
+  background-color: white;
+}
+/* ヘッダーここまで */
+
+/* メインここから */
+main {
+  /* height: auto !important; */
+  position: relative;
+  width: 100%;
+  height: 1250px;
+  min-height: 100%;
+}
+.title-bar {
+  text-align: center;
+  display: flex;
+  height: 100px;
+  border: 5px double black;
+  background-color: ivory;
+}
+.items-title {
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+}
+.main-title {
+  width: 50%;
+}
+.name-title {
+  padding: 10px 0 0 15px;
+  font-size: 25px;
+  font-weight: bold;
+}
+.buy-title {
+  margin: 10px 0 0 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.limit-title {
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 35px;
+  width: 20%;
+  border-left: 5px double black;
+}
+.status-title {
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 35px;
+  width:20%;
+  border-left:5px double black;
+}
+.text-title {
+  padding: 25px 0 0 0;
+  width: 40%;
+}
+/* メインヘッダーここまで */
+
+/* メインボディーここから */
+.main-contents {
+  height: 100%;
+}
+.items-lists {
+  text-align: center;
+  display: flex;
+  height: 120px;
+  border: 5px double black;
+  overflow: scroll;
+  background-color: ivory;
+}
+.item-list {
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+}
+.main-list {
+  width:50%;
+}
+.item-name {
+  padding-top: 10px;
+  font-size: 30px;
+  font-weight: bolder;
+
+}
+.item-name a {
+  color: black;
+  text-decoration: none;
+}
+.buy-date {
+  margin-top: 10px;
+}
+.text {
+  height: 100px;
+  width: 40%;
+  position: relative;
+  display: inline-block;
+  margin: 5px 15px 0 15px;
+  padding: 10px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background-color: #fff;
+  border: 3px solid #555;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.text:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -24px;
+  margin-top: -12px;
+  border: 12px solid transparent;
+  border-right: 12px solid #fff;
+  z-index: 2;
+}
+.text:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  margin-top: -14px;
+  border: 14px solid transparent;
+  border-right: 14px solid #555;
+  z-index: 1;
+}
+.text p {
+  margin: 0;
+  padding-top: 20px;
+  height: 100%;
+}
+.text-title {
+  align-items: center;
+  width: 40%;
+  position: relative;
+  display: inline-block;
+  margin: 15px;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background-color: #fff;
+  border: 3px solid #555;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.text-title:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -24px;
+  margin-top: -12px;
+  border: 12px solid transparent;
+  border-right: 12px solid #fff;
+  z-index: 2;
+}
+.text-title:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  margin-top: -14px;
+  border: 14px solid transparent;
+  border-right: 14px solid #555;
+  z-index: 1;
+}
+.text-title p {
+  margin: 0;
+  padding: 0;
+  line-height: 40px;
+}
+
+.limit-date {
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 35px;
+  width: 20%;
+  border-left: 5px double black;
+}
+.limit-date-out {
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 35px;
+  width: 20%;
+  border-left: 5px double black;
+}
+.status {
+  margin: 0 auto;
+  width:20%;
+  border-left: 5px double black;
+}
+.status img {
+  margin-top: 30px;
+  justify-content: center;
+  width: 50px;
+}
+/* メインボディーここまで */
+  footer {
+    margin-top: auto;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: darkgreen;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+  }
+  #wrapper {
+    width: 100%;
+    position: relative;
+    height: auto !important;
+    height: 100%;
+    min-height: 100%;
+  }

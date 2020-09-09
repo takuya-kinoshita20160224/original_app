@@ -1,5 +1,6 @@
-# Best Before
-  ![Best_Before](https://user-images.githubusercontent.com/68414493/92547531-04ebdc00-f290-11ea-98cb-4b6fe262baf7.png)
+# 賞味期限管理アプリ
+## Best Before
+  ![Best_Before](https://user-images.githubusercontent.com/68414493/92594032-2626e980-f2dd-11ea-925b-b45bd6aebd1e.png)
 ## アプリ概要
 
  ### 開発環境
@@ -11,7 +12,7 @@
  - VSCode (Visual Studio Code)
 
  ### git clone 
-  - https://github.com/takuya-kinoshita/original_app.git
+  - git clone https://github.com/takuya-kinoshita/original_app.git
 
 ### アプリURL 
 - https://original-app-28435.herokuapp.com/
@@ -29,16 +30,25 @@
 
 ## 利用方法
 
- ### トップ画面
+### トップ画面
+![Best Before](https://user-images.githubusercontent.com/68414493/92594032-2626e980-f2dd-11ea-925b-b45bd6aebd1e.png)
+1. ユーザー登録・ログイン
+
+  - 新規登録画面から必要事項を入力しユーザー登録を行います。
+  ![signup](https://user-images.githubusercontent.com/68414493/92548573-56956600-f292-11ea-9d52-e9515aeef3b2.png)
+
+  - ログイン画面から必要事項を入力しログインしてください
+  ![login](https://user-images.githubusercontent.com/68414493/92594220-71d99300-f2dd-11ea-851d-3ec8631e3270.png)
+
+  - マイページボタンからマイページへ進んで下さい
+  ![mypage](https://user-images.githubusercontent.com/68414493/92594271-83bb3600-f2dd-11ea-8a33-822f37bbaa4d.png)
+
+ ### マイページ
+ 
  - 期限が近い商品が上から順に一覧で表示されます
  - 期限までの日数が表示されます
  - 期限までの日数によって状態が変化します
 ![topview](https://user-images.githubusercontent.com/68414493/92547531-04ebdc00-f290-11ea-98cb-4b6fe262baf7.png)
-
-1. ユーザー登録
-
-  - ログイン画面から必要事項を入力しユーザー登録を行います。
-  ![signup](https://user-images.githubusercontent.com/68414493/92548573-56956600-f292-11ea-9d52-e9515aeef3b2.png)
 
 2. 商品登録
 

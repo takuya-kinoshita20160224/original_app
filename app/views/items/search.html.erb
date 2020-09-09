@@ -1,101 +1,90 @@
-<header>
-  <div class="main-header">
-    <div class="heading">
-      <h1 class="title">賞味期限管理アプリ</h1>
-    </div>
-    <div class="side-bar">
-      <%= form_with(url: search_items_path, local: true, method: :get, class: "search-form") do |form| %>
-        <%= form.text_field :keyword, placeholder: "商品名を入力", class: "search-input" %>
-        <%= form.submit "検索", class: "search-btn", id: "search-btn" %>
-      <% end %>
-      <% if user_signed_in? %>
-      <div class="lang-select" id="lang-select">言語
-        <ul class="language hidden" id="lang-list">
-          <li id="ja">日本語</li>
-          <li id="en">English</li>
-          <li id="zh">中文</li>
-        </ul>
+<div id="wrapper">
+  <header>
+    <div class="main-header">
+      <div class="heading">
+        <h1 class="show-title">Best Before</h1>
       </div>
-      <%# ログイン状態 %>
-        <div class="item-tuika" id="product-input">
-          <%= link_to "商品登録", new_item_path %>
+      <div class="side-bar">
+        <%= form_with(url: search_items_path, local: true, method: :get, class: "search-form") do |form| %>
+          <%= form.text_field :keyword, placeholder: "商品名を入力", class: "search-input" %>
+          <%= form.submit "検索", class: "search-btn", id: "search-btn" %>
+        <% end %>
+        <div class="lang-select" id="lang-select">言語
+          <ul class="language hidden" id="lang-list">
+            <li id="ja">日本語</li>
+            <li id="en">English</li>
+            <li id="zh">中文</li>
+          </ul>
         </div>
-        <div class="logout" id="logout">
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-        </div>
-      <% else %>
-      <%# 未ログイン状態 %>
-        <div class="new-entry" id="new-entry">
-          <%= link_to "Sign Up", new_user_registration_path %>
-        </div>
-        <div class="login" id="login">
-          <%= link_to "Log In", new_user_session_path %>
-        </div>
-      <% end %>
-    </div>
-  </div>
-  <div class="header-view">
-    <%= image_tag "image6.jpg", id: "header-image", width:"100%", height:"450" %>
-  </div>
-</header>
-<main>
-  <div class="title-bar">
-    <div class="items-title">
-      <div class="main-title">
-        <p class="name-title" id="name-title">商品名</p>
-        <p class="buy-title" id="buy-title">購入日</p>
-      </div>
-      <div class="text-title">
-        <p id="memo">ひと言メモ</p>
-      </div>
-    </div>
-    <div class="limit-title" id="limit-title">期限まで</div>
-    <div class="status-title" id="status-title">状態</div>
-  </div>
-  <%# ここから一覧表示部分 %>
-  <div class="main-contents">
-    <% @items.each do |item| %>
-      <div class="items-lists">
-        <div class="item-list">
-          <div class="main-list">
-            <P class="item-name"><%= link_to item.name, edit_item_path(item.id) %></p>
-            <p class="buy-date" id="buy-date"><%= "#{item.buy_date}" %></p>
+          <div class="item-tuika" id="move-show">
+            <%= link_to "一覧に戻る", "/users/#{current_user.id}" %>
           </div>
-          <% if item.text.present? %>
-          <div class="text">
-            <p ><%= item.text %></p>
+      </div>
+    </div>
+    <div class="header-view">
+      <%= image_tag "image6.jpg", id: "header-image", width:"100%", height:"450" %>
+    </div>
+  </header>
+  <main>
+    <div class="title-bar">
+      <div class="items-title">
+        <div class="main-title">
+          <p class="name-title" id="name-title">商品名</p>
+          <p class="buy-title" id="buy-title">購入日</p>
+        </div>
+        <div class="text-title">
+          <p id="memo">ひと言メモ</p>
+        </div>
+      </div>
+      <div class="limit-title" id="limit-title">期限まで</div>
+      <div class="status-title" id="status-title">状態</div>
+    </div>
+    <%# ここから一覧表示部分 %>
+    <div class="main-contents">
+      <% @items.each do |item| %>
+        <div class="items-lists">
+          <div class="item-list">
+            <div class="main-list">
+              <P class="item-name"><%= link_to item.name, edit_item_path(item.id) %></p>
+              <p class="buy-date" id="buy-date"><%= "#{item.buy_date}" %></p>
+            </div>
+            <% if item.text.present? %>
+            <div class="text">
+              <p ><%= item.text %></p>
+            </div>
+            <% end %>
           </div>
+
+          <%# 期限日表示 %>
+          <% if (item.limit_date - Date.today).to_i < 0 %>
+            <div class="limit-date-out"><%= "#{(Date.today - item.limit_date).to_i}日過ぎた！" %></div>
+          <% elsif (Date.today - item.limit_date).to_i == 0 %>
+            <div class="limit-date"><p>今日まで！</p></div>
+          <% else %>
+            <div class="limit-date"><%= "あと#{(item.limit_date - Date.today).to_i}日" %></div>
           <% end %>
+          <%# 期限日表示 %>
+
+          <%# ニコちゃんマーク表示 %>
+          <div class="status">
+          <% if (item.limit_date - Date.today).to_i >= 3 %>
+            <%= image_tag "verygood-smile.png" %>
+          <% elsif (item.limit_date - Date.today).to_i >= 0 %>
+            <%= image_tag "good-smile.png" %>
+          <% elsif (item.limit_date - Date.today).to_i >= -1 %>
+            <%= image_tag "bad-smile.png" %>
+          <% else %>
+            <%= image_tag "verybad-smile.png" %>
+          <% end %>
+          </div>
+          <%# ニコちゃんマーク表示 %>
+
         </div>
-
-        <%# 期限日表示 %>
-        <% if (item.limit_date - Date.today).to_i < 0 %>
-          <div class="limit-date-out"><%= "#{(Date.today - item.limit_date).to_i}日過ぎた！" %></div>
-        <% elsif (Date.today - item.limit_date).to_i == 0 %>
-          <div class="limit-date"><p>今日まで！</p></div>
-        <% else %>
-          <div class="limit-date"><%= "あと#{(item.limit_date - Date.today).to_i}日" %></div>
-        <% end %>
-        <%# 期限日表示 %>
-
-        <%# ニコちゃんマーク表示 %>
-        <div class="status">
-        <% if (item.limit_date - Date.today).to_i >= 3 %>
-          <%= image_tag "verygood-smile.png" %>
-        <% elsif (item.limit_date - Date.today).to_i >= 0 %>
-          <%= image_tag "good-smile.png" %>
-        <% elsif (item.limit_date - Date.today).to_i >= -1 %>
-          <%= image_tag "bad-smile.png" %>
-        <% else %>
-          <%= image_tag "verybad-smile.png" %>
-        <% end %>
-        </div>
-        <%# ニコちゃんマーク表示 %>
-
-      </div>
-    <% end %>
-  </div>
-  <%# ここまで一覧表示部分 %>
-</main>
-<footer>
-</footer>
+      <% end %>
+    </div>
+    <%# ここまで一覧表示部分 %>
+  </main>
+  <footer>
+    <p>Takuya Kinoshita Making First Original Application</p>
+  </footer>
+</div>
