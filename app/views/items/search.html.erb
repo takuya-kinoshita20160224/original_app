@@ -35,7 +35,7 @@
     </div>
   </div>
   <div class="header-view">
-    <%= image_tag "image1.jpg", id: "header-image", width:"100%", height:"450" %>
+    <%= image_tag "image6.jpg", id: "header-image", width:"100%", height:"450" %>
   </div>
 </header>
 <main>
@@ -81,13 +81,13 @@
         <%# ニコちゃんマーク表示 %>
         <div class="status">
         <% if (item.limit_date - Date.today).to_i >= 3 %>
-          <img src="/assets/verygood-smile.png">
+          <%= image_tag "verygood-smile.png" %>
         <% elsif (item.limit_date - Date.today).to_i >= 0 %>
-          <img src="/assets/good-smile.png">
+          <%= image_tag "good-smile.png" %>
         <% elsif (item.limit_date - Date.today).to_i >= -1 %>
-          <img src="/assets/bad-smile.png">
+          <%= image_tag "bad-smile.png" %>
         <% else %>
-          <img src="/assets/verybad-smile.png">
+          <%= image_tag "verybad-smile.png" %>
         <% end %>
         </div>
         <%# ニコちゃんマーク表示 %>
