@@ -22,8 +22,8 @@
 - password: 20160224
 
 ### テスト用アカウント
-- email: kinoshita@gmail.com
-- password: kino1116
+- email: kinoppi@gmail.com
+- password: kinoppi1116
 
 ### DB設計
 - ![ER図](https://user-images.githubusercontent.com/68414493/92547469-e84fa400-f28f-11ea-8b37-2673870ddbde.png)
