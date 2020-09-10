@@ -1,29 +1,32 @@
 <div class="header">
-  <p>賞味期限管理アプリ</p>
-  <div class="title">
-    <h1>Best Before</h1>
-  </div>
-  <div class="catchcopy">
-    <h2>美味しいうちに食べようよ！</h2>
-    <h3>Let's talk about food waste!</h3>
-  </div>
-  <% if user_signed_in? %>
-  <div class="move-my-page">
-    <h1>welcome to<br>Best Before</h1>
-  </div>
-  <div class="my-page btn" id="my-page">
-    <%= link_to "my page", "/users/#{current_user.id}" %>
-  </div>
-  <% else %>
-  <div class="new-entry">
-    <div class="sign-up btn" id="sign-up">
-      <%= link_to "Sign Up", new_user_registration_path %>
+  <%= image_tag "image1.jpg", width: "100%", height: "100%" %>
+  <div class="header-text">
+    <p>賞味期限管理アプリ</p>
+    <div class="title">
+      <h1>Best Before</h1>
     </div>
-    <div class="login btn" id="login">
-      <%= link_to "Log In", new_user_session_path %>
+    <div class="catchcopy">
+      <h2>美味しいうちに食べようよ！</h2>
+      <h3>Let's talk about food waste!</h3>
     </div>
+    <% if user_signed_in? %>
+    <div class="move-my-page">
+      <h1>welcome to<br>Best Before</h1>
+    </div>
+    <div class="my-page btn" id="my-page">
+      <%= link_to "my page", "/users/#{current_user.id}" %>
+    </div>
+    <% else %>
+    <div class="new-entry">
+      <div class="sign-up btn" id="sign-up">
+        <%= link_to "Sign Up", new_user_registration_path %>
+      </div>
+      <div class="login btn" id="login">
+        <%= link_to "Log In", new_user_session_path %>
+      </div>
+    </div>
+    <% end %>
   </div>
-  <% end %>
 </div>
 <div class="main">
   <h1 class="contents-title">賞味期限と消費期限を正しく理解しよう♪</h1>
