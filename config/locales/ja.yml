@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        family_name: 苗字
+        last_name: 名前
+        family_name_phonetic: 苗字（フリガナ）
+        last_name_phonetic: 名前（フリガナ）
+      item:
+        name: 商品名
+        buy_date: 購入日
+        limit_date: 賞味(消費)期限

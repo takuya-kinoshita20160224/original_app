@@ -5,8 +5,8 @@
 
  ### 開発環境
 
- - Ruby 6.0.0
- - Ruby On Rails
+ - Ruby 2.6.5
+ - Ruby On Rails 6.0.0
  - javascript
  - mysql
  - VSCode (Visual Studio Code)

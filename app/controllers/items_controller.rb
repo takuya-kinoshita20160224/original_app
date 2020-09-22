@@ -7,7 +7,9 @@ class ItemsController < ApplicationController
   end
 
   def create
-    if Item.create(item_params)
+    @item = Item.new(item_params)
+    if @item.valid?
+      @item.save
       redirect_to "/users/#{current_user.id}"
     else
       render :new

@@ -36,82 +36,83 @@ RSpec.describe User, type: :model do
       it "emailが空だと登録できない" do
         @user.email = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("Email can't be blank", "Email is invalid")
+
+        expect(@user.errors.full_messages).to include("Eメールを入力してください")
       end
       it "入力したemailが既に存在する場合は登録できない" do
         @user.save
         another_user = FactoryBot.build(:user)
         another_user.email = @user.email
         another_user.valid?
-        expect(another_user.errors.full_messages).to include('Email has already been taken')
+        expect(another_user.errors.full_messages).to include('Eメールはすでに存在します')
       end
       it "emailは@がないと登録できない" do
         @user.email = "kinogmail.com"
         @user.valid?
-        expect(@user.errors.full_messages).to include("Email is invalid")
+        expect(@user.errors.full_messages).to include("Eメールは不正な値です")
       end
       it "passwordが空だと登録できない" do
         @user.password = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password can't be blank")
+        expect(@user.errors.full_messages).to include("パスワードを入力してください")
       end
       it "passwordが半角英数字混合でないと登録できない" do
         @user.password = "KINO１１"
         @user.password_confirmation = "KINO１１"
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password is invalid")
+        expect(@user.errors.full_messages).to include("パスワードは不正な値です")
       end
       it "passwordが5文字以下だと登録できない" do
         @user.password = "kino1"
         @user.password = "kino1"
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password is too short (minimum is 6 characters)")
+        expect(@user.errors.full_messages).to include("パスワードは6文字以上で入力してください")
       end
       it "passwordが存在してもpassword_confirmationが空だと登録できない" do
         @user.password = "kino11"
         @user.password_confirmation = ""
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
+        expect(@user.errors.full_messages).to include("パスワード（確認用）とパスワードの入力が一致しません")
       end
       it "family_nameが空だと登録できない" do
         @user.family_name = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("Family name can't be blank")
+        expect(@user.errors.full_messages).to include("苗字を入力してください")
       end
       it "family_nameが全角でないと登録できない" do
         @user.family_name = "ｷﾉｼﾀ"
         @user.valid?
-        expect(@user.errors.full_messages).to include("Family name is invalid")
+        expect(@user.errors.full_messages).to include("苗字は不正な値です")
       end
       it "last_nameが空だと登録できない" do
         @user.last_name = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("Last name can't be blank")
+        expect(@user.errors.full_messages).to include("名前を入力してください")
       end
       it "last_nameが全角でないと登録できない" do
         @user.last_name = "ﾀｸﾔ"
         @user.valid?
-        expect(@user.errors.full_messages).to include("Last name is invalid")
+        expect(@user.errors.full_messages).to include("名前は不正な値です")
       end
       it "family_name_phoneticが空だと登録できない" do
         @user.family_name_phonetic = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("Family name phonetic can't be blank")
+        expect(@user.errors.full_messages).to include("苗字（フリガナ）を入力してください")
       end
       it "family_name_phoneticは全角（カタカナ）でないと登録できない" do
         @user.family_name_phonetic = "ｷﾉｼﾀ"
         @user.valid?
-        expect(@user.errors.full_messages).to include("Family name phonetic is invalid")
+        expect(@user.errors.full_messages).to include("苗字（フリガナ）は不正な値です")
       end
       it "last_name_phoneticが空だと登録できない" do
         @user.last_name_phonetic = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("Last name phonetic can't be blank")
+        expect(@user.errors.full_messages).to include("名前（フリガナ）を入力してください")
       end
       it "last_name_phoneticは全角（カタカナ）でないと登録できない" do
         @user.last_name_phonetic = "ﾀｸﾔ"
         @user.valid?
-        expect(@user.errors.full_messages).to include("Last name phonetic is invalid")
+        expect(@user.errors.full_messages).to include("名前（フリガナ）は不正な値です")
       end
     end
   end
